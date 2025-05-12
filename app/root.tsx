@@ -33,7 +33,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body>
+      <body className="bg-stone-100 text-stone-900 font-sans min-h-screen">
         {children}
         <ScrollRestoration />
         <Scripts />
@@ -45,20 +45,22 @@ export function Layout({ children }: { children: React.ReactNode }) {
 export default function App() {
   return(
     <>
-      <nav className="flex gap-4 p-4 bg-gray-800 text-white">
+      <nav className="flex gap-4 p-4 bg-stone-800 text-white">
       <NavLink 
         to="/" 
         className="text-2xl font-extrabold tracking-widest bg-gradient-to-r from-pink-500 via-yellow-400 to-green-400 bg-clip-text text-transparent animate-pulse drop-shadow-lg hover:scale-110 transition-transform"
       >
-        Hey<span className="animate-bounce inline-block text-slate-50">Helio</span><span className="text-pink-400">!</span>
+        Hey<span className="animate-bounce inline-block text-stone-200">Helio</span><span className="text-pink-400">!</span>
       </NavLink>
         <div className="ml-auto flex gap-4">
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/new">New Item</NavLink>
+          <NavLink to="/" className={ ({isActive}) => isActive ? "font-bold underline" : "text-stone-300"}>Home</NavLink>
+          <NavLink to="/new" className={ ({isActive}) => isActive ? "font-bold underline" : "text-stone-300"}>New Item</NavLink>
         </div>
-        
       </nav>
-      <Outlet />
+      <main className="pt-16 p-4 container mx-auto">
+        <Outlet />
+      </main>
+      
     </>
     )
 }
