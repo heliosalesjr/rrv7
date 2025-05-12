@@ -46,8 +46,17 @@ export default function App() {
   return(
     <>
       <nav className="flex gap-4 p-4 bg-gray-800 text-white">
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/new">New Item</NavLink>
+      <NavLink 
+        to="/" 
+        className="text-2xl font-extrabold tracking-widest bg-gradient-to-r from-pink-500 via-yellow-400 to-green-400 bg-clip-text text-transparent animate-pulse drop-shadow-lg hover:scale-110 transition-transform"
+      >
+        Hey<span className="animate-bounce inline-block text-slate-50">Helio</span><span className="text-pink-400">!</span>
+      </NavLink>
+        <div className="ml-auto flex gap-4">
+          <NavLink to="/">Home</NavLink>
+          <NavLink to="/new">New Item</NavLink>
+        </div>
+        
       </nav>
       <Outlet />
     </>
