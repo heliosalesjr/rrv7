@@ -1,6 +1,6 @@
-import { error } from 'console';
-import React from 'react'
-import { Form, type ActionFunctionArgs } from 'react-router'
+
+import { Form, redirect, type ActionFunctionArgs } from 'react-router'
+import { supabase } from '~/supabase-client';
 
 export async function action( { request }: ActionFunctionArgs) {
   const formData = await request.formData()
@@ -11,10 +11,12 @@ export async function action( { request }: ActionFunctionArgs) {
     return { error: 'Title and description are required' }
   }
 
-  console.log({ title, description })
+  const { error } = await supabase.from('items').insert({ title, description });
+  if (error) {
+    return { error: 'Error creating item' }
+  }
 
-  return null
-
+  return redirect('/');
 }
 
 const newItem = () => {
