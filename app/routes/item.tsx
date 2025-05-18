@@ -27,13 +27,7 @@ export async function action( { request, params }: ActionFunctionArgs) {
     }
 
     return {}
-    //const { error } = await supabase.from('items').insert({ title, description });
 
-    // if (error) {
-    //   return { error: 'Error creating item' }
-    // }
-
-    // return redirect('/');
   }
 
 export async function loader({ params }: Route.LoaderArgs) {
