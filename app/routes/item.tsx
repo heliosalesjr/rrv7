@@ -1,4 +1,3 @@
-import React from 'react'
 import type { Route } from '../+types/root'
 import { supabase } from '~/supabase-client';
 import { Form, redirect, type ActionFunctionArgs } from 'react-router';
