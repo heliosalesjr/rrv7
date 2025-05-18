@@ -21,7 +21,7 @@ export default function Items({ loaderData }: { loaderData: Awaited<ReturnType<t
     {error && <p className="text-red-500">{error}</p>}
     <ul className="space-y-4">
       {items?.map((item) => (
-        <li className="p-4 bg-white shadow-md rounded-lg">
+        <li key={item.id} className="p-4 bg-white shadow-md rounded-lg">
           <Link to={`/items/${item.id}`} className="block text-stone-600">
             <span className="font-bold text-xl"> {item.title}</span>
             <p className="text-stone-700"> {item.description}</p>
