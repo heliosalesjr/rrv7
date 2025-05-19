@@ -19,8 +19,8 @@ export default function Items({
   const { error, items } = loaderData;
   return (
     <div >
-      <h2 className="text-2xl py-2 font-semibold text-stone-500">
-        List of items
+      <h2 className="text-3xl py-2 font-semibold text-stone-500">
+        Here's a list of items
       </h2>
       {error && <p className="text-red-500">{error}</p>}
       <ul className="space-y-4">
@@ -38,7 +38,7 @@ export default function Items({
               {/* Botão de editar */}
               <Link
                 to={`/items/${item.id}`}
-                className="px-3 py-1 bg-blue-500 text-white text-sm rounded hover:bg-blue-600"
+                className="px-3 py-1 bg-blue-600 text-white text-sm rounded hover:bg-blue-700"
               >
                 Edit
               </Link>
@@ -57,7 +57,7 @@ export default function Items({
                   type="submit"
                   name="intent"
                   value="delete"
-                  className="px-3 py-1 bg-red-500 text-white text-sm rounded hover:bg-red-600"
+                  className="px-3 py-1 bg-red-600 text-white text-sm rounded hover:bg-red-700"
                 >
                   Delete
                 </button>
