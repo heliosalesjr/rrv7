@@ -18,7 +18,7 @@ export default function Items({
 }) {
   const { error, items } = loaderData;
   return (
-    <div>
+    <div >
       <h2 className="text-2xl py-2 font-semibold text-stone-500">
         List of items
       </h2>
@@ -27,20 +27,20 @@ export default function Items({
         {items?.map((item) => (
           <li
             key={item.id}
-            className="p-4 bg-white shadow-md rounded-lg space-y-2"
+            className="p-4 bg-white shadow-md rounded-lg space-y-2 relative"
           >
             <Link to={`/items/${item.id}`} className="block text-stone-600">
               <span className="font-bold text-xl">{item.title}</span>
               <p className="text-stone-700">{item.description}</p>
             </Link>
 
-            <div className="flex gap-2 pt-2">
+            <div className="absolute top-0 right-0 flex gap-2 p-2 m-2">
               {/* Botão de editar */}
               <Link
                 to={`/items/${item.id}`}
                 className="px-3 py-1 bg-blue-500 text-white text-sm rounded hover:bg-blue-600"
               >
-                Editar
+                Edit
               </Link>
 
               {/* Botão de deletar */}
@@ -59,7 +59,7 @@ export default function Items({
                   value="delete"
                   className="px-3 py-1 bg-red-500 text-white text-sm rounded hover:bg-red-600"
                 >
-                  Deletar
+                  Delete
                 </button>
               </Form>
             </div>
